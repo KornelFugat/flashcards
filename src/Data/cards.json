@@ -1,0 +1,6 @@
+{
+"cards":[
+    {"id": 1, "side1": "Stolica Polski", "side2": "Warszawa"},
+    {"id": 2, "side1": "Stolica Niemiec", "side2": "Berlin"}
+]
+}
