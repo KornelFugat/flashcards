@@ -60,6 +60,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Flashcards</h1>
         <div className="cardRow">
           <Card side1={this.state.currentCard.side1}
             side2={this.state.currentCard.side2}
