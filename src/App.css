@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+html, body{
+  height:100%;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Jost", sans-serif;
+  font-size:14px;
+  background-image: linear-gradient(to bottom right, #ffa578, #ff675a);
+}
