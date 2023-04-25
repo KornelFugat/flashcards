@@ -1,21 +1,24 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-// import './App.css';
+import './App.css';
 import Card from './Card/Card';
 import DrawButton from './DrawButton/DrawButton';
 import { db } from './firebase.js';
 import { collection, getDocs } from "firebase/firestore";
+import Popup from './Popup/Popup';
 
     // const updateCard = updateCard.bind(this);
   function App(){
 
-  
     const [state,setState] = useState({
       cards: [],
       currentCard: {} 
     })
     const currentCards = state.cards;
     console.log(currentCards)
+
+
+    const [buttonPopup, setButtonPopup] = useState(false);
   
   // Component.jsx
   const fetchCards = async () => {
@@ -108,6 +111,11 @@ useEffect(() => {
         <div className="buttonRow">
           <DrawButton drawCard={updateCard}/>
         </div>
+      <br></br>
+      <button className = "addCardBtn" onClick={() => setButtonPopup(true)}>Add new flashcard</button>
+      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+
+      </Popup>
       </div>
     );}
 //   }
