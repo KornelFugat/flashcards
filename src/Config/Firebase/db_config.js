@@ -1,6 +1,7 @@
 export const DB_CONFIG = {
     apiKey: "AIzaSyAvHZc1c1cj9zRYZXUyTgeGaV6r8Nd8xqg",
     authDomain: "flashcard-project-uek.firebaseapp.com",
+    databaseURL: "https://flashcard-project-uek-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "flashcard-project-uek",
     storageBucket: "flashcard-project-uek.appspot.com",
     messagingSenderId: "28346355490",

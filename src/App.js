@@ -21,11 +21,8 @@ class App extends Component {
     }
   }
 
-  componentWillMount(){
-    console.log("---------")
-    console.log(this.app.database().ref())
-    console.log("---------")
-    console.log(firebase.initializeApp(DB_CONFIG))
+  UNSAFE_componentWillMount(){
+    console.log(this.app.database().ref().child('cards'))
     const currentCards = this.state.cards;
     this.database.on('child_added', snap => {
       currentCards.push({
