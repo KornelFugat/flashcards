@@ -2,22 +2,13 @@ import React from 'react'
 import './Popup.css'
 import CardForm from '../CardForm/CardForm';
 import { motion, AnimatePresence } from "framer-motion"
-import { forwardRef, useImperativeHandle, useState } from 'react';
 
-const Popup = forwardRef((props, ref) => {
-    const [open, setOpen] = useState(true)
-
-    useImperativeHandle(ref, () => {
-        return{
-            open: () => setOpen(true),
-            close: () => setOpen(false)
-        }
-    })
+const Popup = (props) => {
 
   return (props.trigger) ? (
   
     <AnimatePresence>
-        {open && (
+        {props.trigger && (
             <motion.div
             initial={{
                 opacity: 0
@@ -42,7 +33,7 @@ const Popup = forwardRef((props, ref) => {
                 className='popup-inner'>
                     <h2>Add new flashcard</h2>
                     <CardForm />
-                    <button className='close-btn' onClick={() => props.setTrigger(false)} onClick={() => setOpen(false)}></button>
+                    <button className='close-btn' onClick={() => props.setTrigger(false)}></button>
                     {props.children}
                 </motion.div>
             </motion.div>
@@ -50,6 +41,6 @@ const Popup = forwardRef((props, ref) => {
     </AnimatePresence>
 
   ) : "";
-});
+};
 
 export default Popup

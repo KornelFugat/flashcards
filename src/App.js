@@ -114,8 +114,8 @@ useEffect(() => {
           <DrawButton drawCard={updateCard}/>
         </div>
       <br></br>
-      <button className="addCardBtn" onClick={() => popupRef.current.open()}>Add new flashcard</button>
-      <Popup trigger={popupRef.current.open} setTrigger={popupRef.current.open} ref={popupRef}>
+      <button className = "addCardBtn" onClick={() => setButtonPopup(true)}>Add new flashcard</button>
+      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
 
       </Popup>
       </div>
