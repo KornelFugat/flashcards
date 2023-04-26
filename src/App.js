@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Card from './Card/Card';
 import DrawButton from './DrawButton/DrawButton';
@@ -19,6 +19,8 @@ import Popup from './Popup/Popup';
 
 
     const [buttonPopup, setButtonPopup] = useState(false);
+    const popupRef = useRef();
+
   
   // Component.jsx
   const fetchCards = async () => {
@@ -112,8 +114,8 @@ useEffect(() => {
           <DrawButton drawCard={updateCard}/>
         </div>
       <br></br>
-      <button className = "addCardBtn" onClick={() => setButtonPopup(true)}>Add new flashcard</button>
-      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+      <button className="addCardBtn" onClick={() => popupRef.current.open()}>Add new flashcard</button>
+      <Popup trigger={popupRef.current.open} setTrigger={popupRef.current.open} ref={popupRef}>
 
       </Popup>
       </div>

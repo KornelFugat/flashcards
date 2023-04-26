@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: (0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 20, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,10 +16,17 @@
     width: 100%;
     max-width: 640px;
     background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 20, 0.3);
 }
 
 .popup-inner .close-btn {
     position: absolute;
     top: 16px;
     right: 16px;
+}
+
+.close-btn:after{
+    display: inner-block;
+    content: "\00d7"
 }
