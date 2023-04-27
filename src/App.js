@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Card from './Card/Card';
 import DrawButton from './DrawButton/DrawButton';
@@ -19,9 +19,8 @@ import Popup from './Popup/Popup';
 
 
     const [buttonPopup, setButtonPopup] = useState(false);
-    const popupRef = useRef();
 
-  
+
   // Component.jsx
   const fetchCards = async () => {
   const classesCollection = await getDocs(collection(db, "cards"));
@@ -47,9 +46,6 @@ useEffect(() => {
   fetchCards();
 },[]);
     
-
-  
-
 
   // UNSAFE_componentWillMount(){
   //   const currentCards = state.cards;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './DrawButton.css'
+import { Vibration } from "react-native"
 
 class DrawButton extends Component{
     constructor(props){
@@ -10,6 +11,7 @@ class DrawButton extends Component{
 
     drawCard(){
         this.props.drawCard();
+        Vibration.vibrate(100) //Jeśli nie działa na androidzie ustawić na ponad 1000, niektore telefony mają ustawiony minimalny czas wibracji
     }
 
     render(props){
