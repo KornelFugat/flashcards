@@ -6,10 +6,8 @@ import DrawButton from './DrawButton/DrawButton';
 import { db } from './firebase.js';
 import { collection, getDocs } from "firebase/firestore";
 import Popup from './Popup/Popup';
-// import { ShakeToDraw } from './ShakeToDraw/ShakeToDraw';
 
 
-    // const updateCard = updateCard.bind(this);
   function App(){
 
     const [state,setState] = useState({
@@ -50,37 +48,6 @@ useEffect(() => {
   return () => window.removeEventListener('devicemotion', updateCard);
 },[]);
     
-
-
-  // UNSAFE_componentWillMount(){
-  //   const currentCards = state.cards;
-  //   querySnapshot.forEach((doc) => {
-  //     Object.entries(doc.data()).forEach(([key, value]) => {
-  //       currentCards.push({
-  //         id: doc.id,
-  //         side1: key,
-  //         side2: value,
-  //       })
-  //       setState({
-  //         cards: currentCards,
-  //         currentCard: getRandomCard(currentCards)
-  //       })
-  //     })
-  //   })
-    // database.on('child_added', snap => {
-    //   currentCards.push({
-    //     id: snap.key,
-    //     side1: snap.val().side1,
-    //     side2: snap.val().side2,
-    //   })
-
-    //   setState({
-    //     cards: currentCards,
-    //     currentCard: getRandomCard(currentCards)
-    //   })
-
-    // })
-  // }
 
   function getRandomCard(currentCards){
     var randomIndex = Math.floor(Math.random() * currentCards.length);
