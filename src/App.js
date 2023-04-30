@@ -6,6 +6,8 @@ import DrawButton from './DrawButton/DrawButton';
 import { db } from './firebase.js';
 import { collection, getDocs } from "firebase/firestore";
 import Popup from './Popup/Popup';
+// import { ShakeToDraw } from './ShakeToDraw/ShakeToDraw';
+
 
     // const updateCard = updateCard.bind(this);
   function App(){
@@ -44,8 +46,11 @@ import Popup from './Popup/Popup';
 
 useEffect(() => {
   fetchCards();
+  window.addEventListener('devicemotion', updateCard);
+  return () => window.removeEventListener('devicemotion', updateCard);
 },[]);
     
+
 
   // UNSAFE_componentWillMount(){
   //   const currentCards = state.cards;
@@ -110,6 +115,7 @@ useEffect(() => {
           <DrawButton drawCard={updateCard}/>
         </div>
       <br></br>
+
       <button className = "addCardBtn" onClick={() => setButtonPopup(true)}>Add new flashcard</button>
       <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
 
