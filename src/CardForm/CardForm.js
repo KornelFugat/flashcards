@@ -3,12 +3,16 @@ import firebase from "firebase/compat/app"
 import { DB_CONFIG } from "../Config/Firebase/db_config";
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-import './CardForm.css'
+import './CardForm.css';
+import { useUserAuth } from "../UserAuthContext"
 
 const CardForm = () => {
     const [front, setFront] = useState("");
     const [back, setBack] = useState("");
     const cardValues = {};
+    const { user } = useUserAuth();
+    const userId = user.uid;
+
   
     var firebaseApp = firebase.initializeApp(DB_CONFIG)
     var db = firebaseApp.firestore()
@@ -17,11 +21,14 @@ const CardForm = () => {
       e.preventDefault();
   
       cardValues[front] = back;
+      cardValues.userId = userId;
+      console.log(cardValues);
   
       // Save the card values to the database using the cardValues object
       db.collection('cards').add(cardValues)
         .then(() => {
           alert('Flashcard added!');
+          window.location.reload(false);
         })
         .catch((error) => {
           alert(error.message);

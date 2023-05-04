@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+}
+
+textarea {
+  height: 100px;
+}
+
+.react-rating-stars-component {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.react-rating-stars-component .css-86r0ha-svg {
+  height: 40px;
+}
+
+.react-rating-stars-component .css-jvpiij-path {
+  fill: #ccc;
+}
+
+.react-rating-stars-component .css-1bt8t4s-svg {
+  height: 40px;
+  color: #ffd700;
+}
+
+@media (min-width: 768px) {
+  .form {
+    width: 50%;
+    margin: 30px auto;
+  }
+}

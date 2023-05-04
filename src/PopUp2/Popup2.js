@@ -1,9 +1,9 @@
 import React from 'react'
-import './Popup.css'
-import CardForm from '../CardForm/CardForm';
+import './Popup2.css'
+import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import { motion, AnimatePresence } from "framer-motion"
 
-const Popup = (props) => {
+const Popup2 = (props) => {
 
   return (props.trigger) ? (
   
@@ -31,8 +31,8 @@ const Popup = (props) => {
                     scale: 0 
                 }}
                 className='popup-inner'>
-                    <h2>Add new flashcard</h2>
-                    <CardForm />
+                    <h2>Add feedback</h2>
+                    <FeedbackForm />
                     <button className='close-btn' onClick={() => props.setTrigger(false)}></button>
                     {props.children}
                 </motion.div>
@@ -43,4 +43,4 @@ const Popup = (props) => {
   ) : "";
 };
 
-export default Popup
+export default Popup2
