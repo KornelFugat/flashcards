@@ -10,8 +10,11 @@ import { useUserAuth } from "./UserAuthContext";
 import { Button } from "react-bootstrap";
 import Popup from './Popup/Popup';
 import Popup2 from './PopUp2/Popup2';
+import drawsound from './Sounds/drawcard.mp3'
+
     
   function App(){
+
     const [state,setState] = useState({
       cards: [],
       currentCard: {},
@@ -66,12 +69,14 @@ useEffect(() => {
 },[userId]);
 
   function updateCard() {
+    
     const newIndex = (currentCardIndex + 1) % currentCards.length;
     setState((prev) => ({
       ...prev,
       currentCardIndex: newIndex,
       currentCard: currentCards[newIndex],
     }));
+    new Audio(drawsound).play();
   }
   
   const navigate = useNavigate();
