@@ -3,6 +3,7 @@ import { useUserAuth } from "../UserAuthContext";
 import { useNavigate } from "react-router";
 import "./Profile.css";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import userdefault from "./userdefault.jpg";
 
 const Profile = () => {
   const { user } = useUserAuth();
@@ -11,7 +12,7 @@ const Profile = () => {
   
 
   const [profilePicture, setProfilePicture] = useState(null);
-  const [downloadUrl, setDownloadUrl] = useState(null);
+  const [downloadUrl, setDownloadUrl] = useState(userdefault);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
