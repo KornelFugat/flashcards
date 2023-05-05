@@ -5,6 +5,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import './CardForm.css';
 import { useUserAuth } from "../UserAuthContext"
+import addsound from '../Sounds/addcard.mp3'
 
 const CardForm = () => {
     const [front, setFront] = useState("");
@@ -50,7 +51,7 @@ const CardForm = () => {
             <input placeholder="back" value={back}
             onChange={(e) => setBack(e.target.value)}></input>
             <br></br>
-            <button className ="submitBtn" type="submit">Submit</button>
+            <button className ="submitBtn" type="submit" onClick={() => new Audio(addsound).play()}>Submit</button>
         </form>
 
     )
